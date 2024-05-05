@@ -38,12 +38,12 @@ CopyTile:
     ld hl, $9800 ; Start of background tilemap in VRAM
     ld bc, 32*32 ; The size of the background tilemap
 FillScreen:
-	ld a, 0 ; Always use tile 0
-	ld [hli], a
-	dec bc
-	ld a, b
-	or a, c
-	jp nz, FillScreen
+    ld a, 0 ; Always use tile 0
+    ld [hli], a
+    dec bc
+    ld a, b
+    or a, c
+    jp nz, FillScreen
 
     ; Turn the LCD on
     ld a, LCDCF_ON | LCDCF_BGON
