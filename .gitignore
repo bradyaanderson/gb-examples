@@ -1,4 +1,5 @@
 *.o
 *.gb
 *.sym
+*.2bpp
 notes.md
