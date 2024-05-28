@@ -34,6 +34,19 @@ CopyTiles:
     or a, c
     jp nz, CopyTiles
 
+    ; Copy the tilemap
+    ld de, Tilemap
+    ld hl, $9800
+    ld bc, TilemapEnd - Tilemap
+CopyTilemap:
+    ld a, [de]
+    ld [hli], a
+    inc de
+    dec bc
+    ld a, b
+    or a, c
+    jp nz, CopyTilemap
+
     ; Turn the LCD on
     ld a, LCDCF_ON | LCDCF_BGON
     ld [rLCDC], a
