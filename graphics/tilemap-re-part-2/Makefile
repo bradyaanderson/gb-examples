@@ -9,7 +9,7 @@ background.2bpp: background.png
 tilemap.o: tilemap.asm
 	rgbasm -L -o tilemap.o tilemap.asm
 
-tilemap-re.gb: main.o background.2bpp tilemap.o
+tilemap-re.gb: background.2bpp main.o tilemap.o
 	rgblink -o tilemap-re.gb main.o tilemap.o
 	rgbfix -v -p 0xFF tilemap-re.gb
 
